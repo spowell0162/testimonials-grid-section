@@ -25,10 +25,16 @@ body {
     font-size: 13px;
     font-family: 'Barlow Semi Condensed', sans-serif;
     background-color: var(--ligh-grayish-blue);
+    height: 100%;
 }
 
 .page-container {
+    position: relative;
     padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
 }
 
 
@@ -188,7 +194,14 @@ body {
 /* Attribution */
 
 .attribution {
-    display: none;
+    position: absolute;
+    bottom: 0.2rem;
+    left: auto;
+    right: auto;
+}
+
+.attribution a {
+    color: blue;
 }
 
 
@@ -217,6 +230,10 @@ body {
     .grid-col-span-2 {
         grid-column: span 2;
     }
+
+    .grid-child:last-child {
+        grid-column: span 2;
+    }
 }
 
 
@@ -229,10 +246,18 @@ body {
 
     .grid-parent {
         grid-template-columns: repeat(4, 1fr);
+        width: 95%;
     }
 
     .grid-child:last-child {
         grid-column: 4;
         grid-row: 1 / span 2;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .grid-parent {
+        width: 80%;
     }
 }
